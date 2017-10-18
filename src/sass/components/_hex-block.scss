@@ -1,0 +1,57 @@
+.hex-block {
+  position: relative;
+  display: block;
+  margin-bottom: $global-margin;
+  padding: rem-calc(15);
+  text-align: left;
+  cursor: pointer;
+
+  &:focus {
+    .copy-hex-code {
+      background-color: rgba($primary-color, 0.5) !important;
+    }
+  }
+
+  .light & {
+    .color-name,
+    .hex-code,
+    .copy-hex-code {
+      color: $body-font-color;
+    }
+  }
+
+  .color-name,
+  .hex-code {
+    display: block;
+    color: $white;
+  }
+
+  .color-name {
+    line-height: 1.8;
+  }
+
+  .hex-code {
+    opacity: 0.7;
+    font-size: rem-calc(14);
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .copy-hex-code {
+    @include absolute-center();
+    width: 100%;
+    height: 100%;
+    padding: rem-calc(30);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-weight: $global-weight-bold;
+    color: $white;
+    text-align: center;
+  }
+
+  @include on-event() {
+    .copy-hex-code {
+      opacity: 1;
+    }
+  }
+}

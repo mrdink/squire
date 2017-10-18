@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+$editor-width: 770px;
+$highlight-text-color: #fff2a8;
+
+$white-smoke: #f4f5f7;
+$crayon-blue: #0065ff;
+$astronaut: #42526e;
+$navy-blue: #0052cc;
+$sea-buckthorn: #fdaa2a;
+$blue-zodiac: #172b4d;
+$glitter: #deebff;
+$cobalt: #084ca3;
+$congress-blue: #08418a;
+$oxford-blue: #091e42;
+
+@import 'variables-foundation';
+
+
+// Main Navigation
+$main-nav-width: 300px;
+$main-nav-background: $primary-color;
+$main-nav-color: $glitter;
+$main-nav-hover: $congress-blue;
+
+// Child Navigation
+$child-nav-width: 240px;
+$child-nav-background: $white-smoke;
+$child-nav-color: $astronaut;
+$child-nav-hover: #eaecf0;
+
+// Live Search
+$live-search-color: $astronaut;
+$live-search-hover: #eaecf0;

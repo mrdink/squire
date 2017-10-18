@@ -1,0 +1,31 @@
+$search-background: $white;
+
+.search-panel {
+  padding: $global-padding;
+  background-color: $search-background;
+
+  .admin-bar & {
+    top: 32px;
+  }
+
+  .button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .search-input {
+    border: 0;
+    background: none;
+    box-shadow: none;
+
+    @include breakpoint(large up) {
+      font-size: rem-calc(28);
+    }
+  }
+
+  .search-submit {
+    display: none;
+  }
+}

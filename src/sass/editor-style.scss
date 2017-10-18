@@ -1,0 +1,51 @@
+/*
+Theme Name: Squire
+Description: Used to style the TinyMCE editor.
+*/
+@import 'abstracts/variables';
+
+html,
+body {
+  height: auto;
+}
+
+body {
+  max-width: $editor-width;
+  margin: ($global-margin * 2);
+  background: $white;
+}
+
+img {
+  vertical-align: middle;
+  max-width: $editor-width;
+  height: auto;
+  border: 0;
+}
+
+h2,
+h3 {
+  padding-top: rem-calc(60);
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+h2 {
+  font-size: rem-calc(28);
+}
+
+h3 {
+  font-size: rem-calc(21);
+}
+
+h4 {
+  padding-top: rem-calc(30);
+  font-size: rem-calc(18);
+  font-weight: 600;
+  text-transform: uppercase;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}

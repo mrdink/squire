@@ -1,0 +1,7 @@
+.sass-cache/
+.idea/
+node_modules/
+dist/
+assets/
+.DS_Store
+languages/*.pot
