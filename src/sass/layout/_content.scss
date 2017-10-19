@@ -27,6 +27,26 @@
   }
 }
 
+.child-entry-header {
+  .entry-title {
+    position: relative;
+
+    & > a {
+      color: $header-color;
+
+      @include on-event() {
+        &::before {
+          @include vertical-center();
+          left: -24px;
+          content: '\f0c1';
+          font-family: 'FontAwesome';
+          font-size: rem-calc(16);
+        }
+      }
+    }
+  }
+}
+
 h1.entry-title {
   font-size: rem-calc(38);
   font-weight: 300;

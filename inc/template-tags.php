@@ -152,8 +152,8 @@ function squire_get_child_pages() {
 			?>
 
 			<article id="<?php echo $post_slug; ?>" <?php post_class(); ?> data-magellan-target="<?php echo $post_slug; ?>" aria-describedby="<?php echo get_the_title(); ?>">
-				<header class="entry-header">
-					<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+				<header class="entry-header child-entry-header">
+					<?php the_title( '<h2 class="entry-title"><a href="#' . $post_slug . '">', '</a></h2>' ); ?>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
