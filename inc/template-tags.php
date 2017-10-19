@@ -148,9 +148,10 @@ function squire_get_child_pages() {
 
 			$wp_query->the_post();
 			$pages[] = $post;
-			$post_slug = $post->post_name; ?>
+			$post_slug = $post->post_name;
+			?>
 
-			<article id="<?php echo $post_slug ?>" <?php post_class(); ?> data-magellan-target="<?php echo $post_slug ?>" aria-describedby="<?php echo get_the_title(); ?>">
+			<article id="<?php echo $post_slug; ?>" <?php post_class(); ?> data-magellan-target="<?php echo $post_slug; ?>" aria-describedby="<?php echo get_the_title(); ?>">
 				<header class="entry-header">
 					<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 				</header><!-- .entry-header -->
@@ -165,7 +166,7 @@ function squire_get_child_pages() {
 					edit_post_link(
 						sprintf(
 							wp_kses(
-							/* translators: %s: Name of current post. Only visible to screen readers */
+								/* translators: %s: Name of current post. Only visible to screen readers */
 								__( 'Edit <span class="screen-reader-text">%s</span>', 'squire' ),
 								array(
 									'span' => array(

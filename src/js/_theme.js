@@ -12,7 +12,7 @@
 				// @link http://foundation.zurb.com/docs
 				$( document ).foundation();
 
-				new Clipboard('.js-copy');
+				new Clipboard( '.js-copy' );
 
 				var backToTopSel = '.js-scroll-to-top', backtoTopActiveClass = 'active fadeIn';
 
@@ -31,7 +31,6 @@
 				);
 
 				$( backToTopSel ).on( 'click', jumpToTop );
-
 
 			}
 		},

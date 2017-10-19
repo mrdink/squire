@@ -30,11 +30,17 @@ module.exports = {
 		],
 		dest: 'assets/js/theme.js'
 	},
-	customizer: {
+	color_scheme_control: {
 		src: [
-			'src/js/customizer.js'
+			'src/js/color-scheme-control.js'
 		],
-		dest: 'assets/js/customizer.js'
+		dest: 'assets/js/color-scheme-control.js'
+	},
+	customize_preview: {
+		src: [
+			'src/js/customize-preview.js'
+		],
+		dest: 'assets/js/customize-preview.js'
 	},
 	skip: {
 		src: [

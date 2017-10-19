@@ -66,16 +66,6 @@ if ( ! function_exists( 'squire_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support(
-			'custom-background', apply_filters(
-				'squire_custom_background_args', array(
-					'default-color' => 'e6e6e6',
-					'default-image' => '',
-				)
-			)
-		);
-
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
@@ -93,12 +83,39 @@ if ( ! function_exists( 'squire_setup' ) ) :
 			)
 		);
 
+		$color_scheme  = squire_get_color_scheme();
+		$default_color = trim( $color_scheme[0], '#' );
+
+		// Setup the WordPress core custom background feature.
+
+		/**
+		 * Filter Squire custom-header support arguments.
+		 *
+		 * @since Squire 1.0
+		 *
+		 * @param array $args {
+		 *     An array of custom-header support arguments.
+		 *
+		 *     @type string $default-color          Default color of the header.
+		 *     @type string $default-attachment     Default attachment of the header.
+		 * }
+		 */
+		add_theme_support(
+			'custom-background', apply_filters(
+				'squire_custom_background_args', array(
+					'default-color'      => $default_color,
+					'default-attachment' => 'fixed',
+				)
+			)
+		);
+
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
 		add_editor_style(
 			array(
+				'assets/css/font-awesome.css',
 				'assets/css/main.css',
 				'assets/css/editor-style.css',
 			)

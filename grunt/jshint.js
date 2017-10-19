@@ -18,7 +18,8 @@ module.exports = {
 	all: [
 		'Gruntfile.js',
 		'src/js/**/*.js',
-		'!src/js/customizer.js',
+		'!src/js/color-scheme-control.js',
+		'!src/js/customize-preview.js',
 		'!src/js/skip-link-focus.js'
 	]
 };

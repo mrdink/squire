@@ -4,5 +4,5 @@
 .site-footer {
   @include flex-grid-column();
   padding: $global-padding;
-  font-size: rem-calc(14);
+  font-size: rem-calc(12);
 }
