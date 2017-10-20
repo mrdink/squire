@@ -49,6 +49,7 @@ $header-anchor-hover: $white;
     padding: 0;
     border-radius: 50%;
     font-size: rem-calc(18);
+    line-height: 40px;
     color: $glitter;
     cursor: pointer;
   }
@@ -61,10 +62,15 @@ $header-anchor-hover: $white;
 .site-title {
   float: left;
   margin-bottom: 0;
-  font-size: rem-calc(24);
+  font-size: rem-calc(18);
+  line-height: 40px;
 
   a {
     color: $white;
+  }
+
+  @include breakpoint(large up) {
+    font-size: rem-calc(24);
   }
 }
 

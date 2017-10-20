@@ -64,11 +64,10 @@
 
 		// Add additional colors.
 		colors.secondary_textcolor = Color( colors.textcolor ).toCSS( 'rgba', 0.7 );
-		colors.border_color = Color( colors.textcolor ).toCSS( 'rgba', 0.1 );
 		colors.border_focus_color = Color( colors.textcolor ).toCSS( 'rgba', 0.3 );
 		colors.secondary_sidebar_textcolor = Color( colors.sidebar_textcolor ).toCSS( 'rgba', 0.7 );
 		colors.sidebar_border_color = Color( colors.sidebar_textcolor ).toCSS( 'rgba', 0.1 );
-		colors.sidebar_border_focus_color = Color( colors.sidebar_textcolor ).toCSS( 'rgba', 0.3 );
+		colors.sidebar_text_hover = Color( colors.sidebar_textcolor ).toCSS( 'rgba', 0.3 );
 
 		css = cssTemplate( colors );
 

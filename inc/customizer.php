@@ -170,12 +170,12 @@ function squire_get_color_schemes() {
 			'default' => array(
 				'label'  => __( 'Default', 'squire' ),
 				'colors' => array(
-					'#f1f1f1',
-					'#ffffff',
-					'#ffffff',
-					'#333333',
-					'#333333',
-					'#f7f7f7',
+					'#fefefe',
+					'#084ca3',
+					'#fefefe',
+					'#172b4d',
+					'#deebff',
+					'#deebff',
 				),
 			),
 			'luci'  => array(
@@ -194,10 +194,10 @@ function squire_get_color_schemes() {
 				'colors' => array(
 					'#111111',
 					'#202020',
-					'#202020',
+					'#404040',
 					'#bebebe',
 					'#bebebe',
-					'#1b1b1b',
+					'#cccccc',
 				),
 			),
 			'pink'    => array(
@@ -241,8 +241,6 @@ if ( ! function_exists( 'squire_get_color_scheme' ) ) :
 	/**
 	 * Get the current Squire color scheme.
 	 *
-	 * @since Squire 1.0
-	 *
 	 * @return array An associative array of either the current or default color scheme hex values.
 	 */
 	function squire_get_color_scheme() {
@@ -278,8 +276,6 @@ endif; // squire_get_color_scheme_choices
 if ( ! function_exists( 'squire_sanitize_color_scheme' ) ) :
 	/**
 	 * Sanitization callback for color schemes.
-	 *
-	 * @since Squire 1.0
 	 *
 	 * @param string $value Color scheme name value.
 	 * @return string Color scheme name.
@@ -320,10 +316,8 @@ function squire_color_scheme_css() {
 		'textcolor'                   => $color_scheme[3],
 		'secondary_textcolor'         => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.7)', $color_textcolor_rgb ),
 		'border_color'                => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.1)', $color_textcolor_rgb ),
-		'border_focus_color'          => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.3)', $color_textcolor_rgb ),
 		'sidebar_textcolor'           => $color_scheme[4],
-		'sidebar_border_color'        => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.1)', $color_sidebar_textcolor_rgb ),
-		'sidebar_border_focus_color'  => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.3)', $color_sidebar_textcolor_rgb ),
+		'sidebar_text_hover'          => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.2)', $color_sidebar_textcolor_rgb ),
 		'secondary_sidebar_textcolor' => vsprintf( 'rgba( %1$s, %2$s, %3$s, 0.7)', $color_sidebar_textcolor_rgb ),
 		'meta_box_background_color'   => $color_scheme[5],
 	);
@@ -368,10 +362,8 @@ function squire_get_color_scheme_css( $colors ) {
 			'textcolor'                   => '',
 			'secondary_textcolor'         => '',
 			'border_color'                => '',
-			'border_focus_color'          => '',
 			'sidebar_textcolor'           => '',
-			'sidebar_border_color'        => '',
-			'sidebar_border_focus_color'  => '',
+			'sidebar_text_hover'  => '',
 			'secondary_sidebar_textcolor' => '',
 			'meta_box_background_color'   => '',
 		)
@@ -443,7 +435,7 @@ function squire_get_color_scheme_css( $colors ) {
 	.main-navigation .menu > li.current-menu-parent > a,
 	.button:hover,
 	.button:focus {
-		background-color: {$colors['sidebar_border_focus_color']};
+		background-color: {$colors['sidebar_text_hover']};
 	}
 
 	/* Meta Background Color */
@@ -471,10 +463,8 @@ function squire_color_scheme_css_template() {
 		'textcolor'                   => '{{ data.textcolor }}',
 		'secondary_textcolor'         => '{{ data.secondary_textcolor }}',
 		'border_color'                => '{{ data.border_color }}',
-		'border_focus_color'          => '{{ data.border_focus_color }}',
 		'sidebar_textcolor'           => '{{ data.sidebar_textcolor }}',
-		'sidebar_border_color'        => '{{ data.sidebar_border_color }}',
-		'sidebar_border_focus_color'  => '{{ data.sidebar_border_focus_color }}',
+		'sidebar_text_hover'  => '{{ data.sidebar_text_hover }}',
 		'secondary_sidebar_textcolor' => '{{ data.secondary_sidebar_textcolor }}',
 		'meta_box_background_color'   => '{{ data.meta_box_background_color }}',
 	);
