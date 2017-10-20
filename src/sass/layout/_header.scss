@@ -7,6 +7,7 @@ $header-anchor-hover: $white;
 .site-header {
   @include clearfix();
   background-color: $main-nav-background;
+  overflow-y: scroll;
   color: $glitter;
 
   @include breakpoint(large up) {

@@ -1,4 +1,10 @@
 .widget-area {
+  display: none;
+
+  @include breakpoint(large up) {
+    display: block;
+  }
+
   .widget-title {
     font-size: rem-calc(18);
     color: $white;
@@ -21,6 +27,34 @@
 
       a {
         padding-left: 0;
+      }
+    }
+
+    .menu {
+      @include menu-direction(vertical);
+
+      & > li {
+        & > a {
+          font-size: rem-calc(14);
+          color: $main-nav-color;
+
+          @include on-event() {
+            background-color: $main-nav-hover;
+          }
+        }
+
+        &.current_page_item,
+        &.current-menu-parent {
+          & > a {
+            background-color: $main-nav-hover;
+          }
+        }
+
+        &.current-menu-parent {
+          & > .submenu {
+            display: flex !important;
+          }
+        }
       }
     }
   }

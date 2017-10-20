@@ -53,7 +53,7 @@ if ( $description || is_customize_preview() ) :
 			endif;
 			?>
 
-			<button class="button menu-toggle hide-for-large" data-toggle="site-navigation" aria-controls="site-navigation" aria-expanded="false">
+			<button class="button menu-toggle hide-for-large" data-toggle="site-navigation secondary" aria-controls="site-navigation" aria-expanded="false">
 				<i class="fa fa-bars"></i>
 				<span class="screen-reader-text"><?php esc_html_e( 'Main navigation toggle', 'squire' ); ?></span>
 			</button>
