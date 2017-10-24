@@ -83,7 +83,7 @@
   margin-bottom: rem-calc(24);
 
   a {
-    color: $secondary-color;
+    color: $body-font-color;
   }
 
   .comment-edit-link {
@@ -129,7 +129,7 @@
 
     a {
       @include button($style: 'hollow');
-      font-size: rem-calc(14);
+      font-size: rem-calc(10);
     }
   }
 }

@@ -3,14 +3,14 @@
   left: 0;
   z-index: 99;
   display: block;
-  width: 100%;
+  width: (map-get($offcanvas-sizes, small) - 16px);
   margin: $global-margin 0 0;
   padding: 0;
-  background-color: $white;
+  background: $white;
   overflow: auto;
 
-  @include breakpoint(medium up) {
-    width: (600px - 16px);
+  @include breakpoint(large up) {
+    width: (map-get($offcanvas-sizes, medium) - 16px);
   }
 
   li {

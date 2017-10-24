@@ -28,9 +28,9 @@ $description = get_bloginfo( 'description', 'display' );
 	<div class="search-panel off-canvas position-left" id="js-search" data-off-canvas data-auto-focus="true">
 		<?php echo get_search_form(); ?>
 
-		<button class="secondary button" aria-label="Close menu" type="button" tabindex="2" data-close>
+		<a class="secondary button" aria-label="Close menu" data-close>
 			<i class="fa fa-angle-left" aria-hidden="true"></i>
-		</button>
+		</a>
 	</div>
 
 
@@ -114,5 +114,18 @@ if ( $description || is_customize_preview() ) :
 	</header><!-- #masthead -->
 
 	<?php squire_child_page_nav(); ?>
+
+	<?php
+
+	/*
+	 * If a regular post or page, and not the front page, show the featured image.
+	 * Using get_queried_object_id() here since the $post global may not be set before a call to the_post().
+	 */
+	if ( ( is_single() || ( is_page() && ! squire_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
+		echo '<div class="single-featured-image-header">';
+		echo get_the_post_thumbnail( get_queried_object_id(), 'squire-featured-image' );
+		echo '</div><!-- .single-featured-image-header -->';
+	endif;
+	?>
 
 	<div id="content" class="site-content">

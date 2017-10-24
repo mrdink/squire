@@ -159,3 +159,10 @@ function squire_quicktags() {
 }
 
 add_action( 'admin_print_footer_scripts', 'squire_quicktags' );
+
+/**
+ * Checks to see if we're on the homepage or not.
+ */
+function squire_is_frontpage() {
+	return ( is_front_page() && ! is_home() );
+}

@@ -1,6 +1,19 @@
 .custom-header,
 .single-featured-image-header {
   margin-bottom: $global-margin;
+
+  @include breakpoint(large up) {
+    margin-left: $main-nav-width;
+
+    .has-child-pages & {
+      margin-left: ($main-nav-width + $child-nav-width);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .sticky-post {
@@ -10,6 +23,11 @@
 .hentry {
   margin: rem-calc(0 0 60);
   word-wrap: break-word;
+}
+
+.entry-profile-pic {
+  margin-bottom: $global-margin;
+  font-size: rem-calc(13);
 
   .avatar {
     width: 30px;
@@ -50,10 +68,38 @@
 h1.entry-title {
   font-size: rem-calc(38);
   font-weight: 300;
+  letter-spacing: rem-calc(-0.5);
 }
 
 h2.entry-title {
   font-size: rem-calc(32);
+  letter-spacing: rem-calc(-0.5);
+}
+
+.entry-meta {
+  @include clearfix();
+  font-size: rem-calc(13);
+
+  .entry-date {
+    float: left;
+    margin-right: $global-margin;
+    padding: rem-calc(5);
+    line-height: 1;
+  }
+
+  .post-categories {
+    @include menu-base();
+    @include menu-simple();
+    float: left;
+
+    & > li {
+      & > a {
+        padding: rem-calc(5);
+        background-color: $white-smoke;
+        color: $astronaut;
+      }
+    }
+  }
 }
 
 .updated:not(.published) {
@@ -64,6 +110,13 @@ h2.entry-title {
 .entry-content,
 .entry-summary {
   margin: 1.5rem 0 0;
+
+  @include breakpoint(large up) {
+    ul,
+    ol {
+      margin-left: 0;
+    }
+  }
 
   h2,
   h3 {

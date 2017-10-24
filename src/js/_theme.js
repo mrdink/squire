@@ -12,6 +12,10 @@
 				// @link http://foundation.zurb.com/docs
 				$( document ).foundation();
 
+				$(document).on('opened.zf.offcanvas', function () {
+					$("#site-search .search-input").focus();
+				});
+
 				new Clipboard( '.js-copy' );
 
 				var backToTopSel = '.js-scroll-to-top', backtoTopActiveClass = 'active fadeIn';

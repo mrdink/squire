@@ -10,6 +10,6 @@
 ?>
 
 <form id="site-search" role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-	<input class="search-input" type="search" placeholder="<?php esc_html_e( 'Search', 'squire' ); ?>" value="<?php echo esc_html( get_search_query() ); ?>" name="s" title="<?php _e( 'Search for:', 'squire' ); ?>" tabindex="1"/>
+	<input class="search-input" type="search" placeholder="<?php esc_html_e( 'Search', 'squire' ); ?>" value="<?php echo esc_html( get_search_query() ); ?>" name="s" title="<?php _e( 'Search for:', 'squire' ); ?>"/>
 	<input type="submit" class="search-submit" value="<?php esc_html_e( 'Search', 'squire' ); ?>"/>
 </form>
